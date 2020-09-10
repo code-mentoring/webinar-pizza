@@ -1,0 +1,13 @@
+{
+  "name": "pizza",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "sass ./sass/:./css --watch & http-server ./"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "sass": "^1.26.10"
+  }
+}
