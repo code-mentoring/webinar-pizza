@@ -1,0 +1,23 @@
+@import '../variables';
+
+button, .button {
+  display: inline-flex;
+  background-image: url(/img/components/button-bg.svg);
+  height: 7.2rem;
+  align-items: center;
+  justify-content: center;
+  min-width: 31rem;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: $color-white;
+  transition: filter ease-out 0.1s;
+
+  &:hover, &:focus {
+    filter: brightness(1.2);
+    outline: none;
+  }
+  &:active { filter: brightness(0.8); }
+}
