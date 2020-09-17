@@ -3,10 +3,11 @@
 @import './reset';
 @import './type';
 @import './components/button';
+@import './components/menu-list';
 
 html {
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: $font-body;
 }
 
 body {

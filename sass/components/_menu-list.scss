@@ -1,0 +1,30 @@
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem 4rem;
+  max-width: 100rem;
+  text-align: center;
+  margin: auto;
+
+  .img {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url(/img/components/image-border.svg);
+      background-size: 100%;
+    }
+  }
+
+  h4 {
+    line-height: 4.8rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+}
