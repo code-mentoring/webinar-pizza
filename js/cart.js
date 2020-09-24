@@ -3,6 +3,7 @@
  * 2. When we click on a button, we want to add the pizza or deal to the cart
  * 3. When we click the cart, we want to open checkout
  */
+
 class Cart {
   constructor() {
     // Retrieve the saved cart
@@ -44,6 +45,8 @@ class Cart {
 
     // Remove the item if it has no quantity
     if (item.quantity <= 0) this.removeItemFromCart(id);
+
+    this.save();
   }
 
   // Entirely remove product from cart
