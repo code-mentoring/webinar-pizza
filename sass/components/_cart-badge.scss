@@ -1,0 +1,28 @@
+#cart {
+  position: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  left: 2rem;
+  bottom: 2rem;
+  background-image: url("/img/badge.svg");
+  width: 12rem;
+  height: 12.2rem;
+
+  span {
+    display: block;
+    border-radius: 50%;
+    background: $color-red;
+    border: 4px solid $color-white;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 2.4rem;
+    width: 4rem;
+    height: 4rem;
+    line-height: 3.5rem;
+    transform: translate(60%, -60%);
+    text-align: center;
+  }
+}

@@ -9,6 +9,7 @@ class Cart {
     // Retrieve the saved cart
     const saved = localStorage.getItem('cart');
     this.items = saved ? JSON.parse(saved) : [];
+    this.cartSpan = document.querySelector("#cart span");
 
 
     document.querySelectorAll('.cart-button').forEach(b => {
@@ -18,6 +19,13 @@ class Cart {
       });
     });
 
+  }
+
+  get size() {
+    return this.items.reduce(
+      (num, cur) => num + cur.quantity,
+      0
+    );
   }
 
   _lookupItem(id, throwError = true) {
@@ -66,6 +74,7 @@ class Cart {
 
   save() {
     localStorage.setItem('cart', JSON.stringify(this.items));
+    this.cartSpan.innerHTML = this.size;
   }
 
 }
