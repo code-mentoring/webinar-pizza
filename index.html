@@ -166,11 +166,26 @@
     </div>
   </footer>
 
-  <div id="cart">
+  <div
+    id="cart"
+    onclick="document.getElementById('checkout').classList.add('show')"
+  >
     <span>0</span>
   </div>
 
-  <aside class="chat"></aside>
+  <aside id="checkout">
+    <main>
+      <h2>Checkout</h2>
+      <img
+        src="/img/x.svg"
+        alt="Close"
+        class="close"
+        onclick="document.getElementById('checkout').classList.remove('show')"
+      >
+      <ul id="order"></ul>
+      <button class="button">Order my pizza!</button>
+    </main>
+  </aside>
 
   <script src="/js/cart.js"></script>
 

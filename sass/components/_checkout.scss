@@ -1,0 +1,43 @@
+aside#checkout {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($color-black, 0.7);
+
+  &.show {
+    display: flex;
+  }
+
+  img.close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+  }
+
+  main {
+    position: relative;
+    background: $color-white;
+    padding: 4rem;
+    padding-top: 0;
+    border-radius: 1rem;
+
+    h2 {
+      text-align: center;
+    }
+
+    li {
+      display: flex;
+      height: 6rem;
+      align-items: center;
+      justify-content: space-between;
+      span:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}

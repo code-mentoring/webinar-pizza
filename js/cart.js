@@ -4,12 +4,52 @@
  * 3. When we click the cart, we want to open checkout
  */
 
+const data = {
+  "deal-2-for-1": {
+    name: "2 for 1 Large pizzas",
+    price: 25
+  },
+  "deal-event": {
+    name: "200 pizzas for an event",
+    price: 200
+  },
+  "deal-drink-small": {
+    name: "2L Coke + Small Pizza",
+    price: 25
+  },
+  "pepperoni": {
+    name: "Pepperoni",
+    price: 20
+  },
+  "bacon-and-bbq-chicken": {
+    name: "Bacon and BBQ chicken",
+    price: 20
+  },
+  "hawaiian": {
+    name: "Hawaiian",
+    price: 20
+  },
+  "chicago-style-deep-dish": {
+    name: "Chicago style deep dish",
+    price: 20
+  },
+  "firey": {
+    name: "Firey",
+    price: 20
+  },
+  "suprise-delux": {
+    name: "Suprise Delux",
+    price: 20
+  },
+}
+
 class Cart {
   constructor() {
     // Retrieve the saved cart
     const saved = localStorage.getItem('cart');
     this.items = saved ? JSON.parse(saved) : [];
     this.cartSpan = document.querySelector("#cart span");
+    this.orderUL = document.querySelector("#order");
 
 
     document.querySelectorAll('.cart-button').forEach(b => {
@@ -19,6 +59,7 @@ class Cart {
       });
     });
 
+    this.save();
   }
 
   get size() {
@@ -75,6 +116,21 @@ class Cart {
   save() {
     localStorage.setItem('cart', JSON.stringify(this.items));
     this.cartSpan.innerHTML = this.size;
+    this._render();
+  }
+
+
+  _render() {
+    this.orderUL.innerHTML = "";
+    this.items.forEach(i => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${data[i.id].name}</span>
+        <span>${i.quantity}</span>
+        <span>$${data[i.id].price * i.quantity}</span>
+      `;
+      this.orderUL.appendChild(li);
+    })
   }
 
 }
